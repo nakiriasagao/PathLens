@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#07111e" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>PathLens · 网络路径观测器</title>
+  </head>
+  <body>
+    <div id="root"><div style="display:grid;place-items:center;min-height:100vh;background:#07111e;color:#9bb3c4;font:14px sans-serif">PathLens 正在启动…</div></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      setTimeout(function () {
+        if (!window.__PATHLENS_BOOTED__) {
+          document.getElementById('root').innerHTML = '<div style="padding:32px;background:#07111e;color:#f0c179;font:14px sans-serif;min-height:100vh">应用脚本未能加载，请重新安装最新 APK。</div>'
+        }
+      }, 5000)
+    </script>
+  </body>
+</html>

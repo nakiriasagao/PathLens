@@ -1,0 +1,16 @@
+node_modules/
+.android-sdk/
+dist/
+.DS_Store
+android/.gradle/
+android/local.properties
+android/build/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+manual-apk/
+
+# Local validation captures and signing metadata are not project sources.
+device-*.png
+phone-*.png
+window.xml
+*.idsig

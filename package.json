@@ -1,0 +1,33 @@
+{
+  "name": "pathlens-network-mapper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"node server/index.mjs\" \"vite --host 0.0.0.0\"",
+    "build": "vite build",
+    "start": "node server/index.mjs",
+    "mobile:init:android": "npx cap add android",
+    "mobile:sync": "npm run build && npx cap sync",
+    "mobile:android": "npm run build && npx cap sync android && npx cap open android",
+    "mobile:run:android": "npm run build && npx cap sync android && npx cap run android",
+    "mobile:ios": "npm run build && npx cap sync ios && npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/cli": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "latest",
+    "@capacitor/network": "latest",
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "latest",
+    "express": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}

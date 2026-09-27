@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PathLens 网络路径观测器</string>
+    <string name="title_activity_main">PathLens 网络路径观测器</string>
+    <string name="package_name">com.pathlens.networkmapper</string>
+    <string name="custom_url_scheme">com.pathlens.networkmapper</string>
+</resources>
