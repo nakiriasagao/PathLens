@@ -50,7 +50,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\build-standalone-apk.ps1
 
 ## 说明
 
-- 高德地图 Key 已配置在 `src/main.jsx` 的 `AMAP_KEY` 常量中。
+- 高德地图 Key 已配置在 `src/WorldMap.jsx` 的 `AMAP_KEY` 常量中，也可通过 `VITE_AMAP_KEY` 覆盖。
 - Windows 使用 `tracert`、`route` 和 `arp`；Linux/macOS 使用 `traceroute`、`ip route` 和 `arp`。
 - 高德地图加载失败时会明确显示错误和重试按钮，不会伪造离线地图。
 - 邻居设备来自 Android 原生 ARP / 活跃探测；桌面端服务则使用系统 ARP 表并主动刷新局域网缓存。

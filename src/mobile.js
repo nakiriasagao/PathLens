@@ -28,6 +28,19 @@ async function enrichRemoteHop(hop, signal, context = {}) {
       locationSource: 'probe'
     }
   }
+  if (context.isProbeGateway && context.probe?.city) {
+    return {
+      ...hop,
+      city: context.probe.city,
+      region: context.probe.region || context.probe.state || '—',
+      country: context.probe.country || '—',
+      isp: context.probe.network ? `远程探针 · ${context.probe.network}` : '远程探针网关',
+      asn: context.probe.asn ? `AS${context.probe.asn}` : '—',
+      lat: null,
+      lng: null,
+      locationSource: 'probe-estimate'
+    }
+  }
   if (privateAddress.test(hop.ip)) return { ...hop, city: '本地网络', region: 'Private', country: 'LAN', isp: 'Private network', asn: 'RFC1918', lat: null, lng: null, locationSource: 'private-network' }
   try {
     const response = await fetch(`https://ipwho.is/${encodeURIComponent(hop.ip)}`, { signal })
